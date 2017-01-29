@@ -1,0 +1,11 @@
+<h2>New Task</h2>
+
+<!--  using simple form gem -->
+<!-- @task is an instance variable -->
+<!-- inside tasks_controller, define @task -->
+<%= simple_form_for (@task) do |f| %>
+    <%= f.input :content %>
+
+    <%= f.button :submit %>
+
+<% end %>

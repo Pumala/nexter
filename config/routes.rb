@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
   devise_for :users
+
+  resources :tasks
+
   # controller name then # before action name
   root 'pages#home'
 
