@@ -8,9 +8,11 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-      <div class="container">
-          <%= yield %>
-      </div>
-  </body>
+    <body>
+    <!-- if we want to show the element to the user, include the equal sign. if we do not want to show it, exclude it so it looks like this: <% %> instead -->
+    <%= render 'layouts/navbar' %>
+    <div class="container">
+        <%= yield %>
+    </div>
+    </body>
 </html>

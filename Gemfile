@@ -54,3 +54,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Use Bootstrap for stylesheets
 gem "twitter-bootstrap-rails"
+
+# Use font-awesome icons
+gem "font-awesome-rails"
