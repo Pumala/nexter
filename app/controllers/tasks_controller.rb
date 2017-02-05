@@ -5,6 +5,10 @@ class TasksController < ApplicationController
         @task = Task.new
     end
 
+    def edit
+      @task = Task.find(params[:id])
+    end
+
     def create
         # the tasks_params is the task info that the user creates
         @task = Task.new(tasks_params)
@@ -17,6 +21,16 @@ class TasksController < ApplicationController
           render 'new'
         end
 
+    end
+
+    def update
+      @task = Task.find(params[:id])
+      if @task.update(tasks_params)
+        flash[:notice] = "Task was successfully updated!"
+        redirect_to task_path(@task)
+      else
+        render 'edit'
+      end
     end
 
     def show
