@@ -1,13 +1,18 @@
 class TasksController < ApplicationController
 
-    def new
-        # render the task
-        @task = Task.new
-    end
+  def index
+    # all the tasks
+    @tasks = Task.all
+  end
 
-    def edit
-      @task = Task.find(params[:id])
-    end
+  def new
+      # render the task
+      @task = Task.new
+  end
+
+  def edit
+    @task = Task.find(params[:id])
+  end
 
     def create
         # the tasks_params is the task info that the user creates
