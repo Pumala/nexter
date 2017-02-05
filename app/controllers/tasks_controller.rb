@@ -8,11 +8,20 @@ class TasksController < ApplicationController
     def create
         # the tasks_params is the task info that the user creates
         @task = Task.new(tasks_params)
-        @task.save
+        if @task.save
+          flash[:notice] = "Task was successfully created!"
+          # redirected to task_path because we want it to show
+          # check out rake routes
+          redirect_to task_path(@task)
+        else
+          render 'new'
+        end
 
-        # redirected to task_path because we want it to show
-        # check out rake routes
-        redirect_to task_path(@task)
+    end
+
+    def show
+      # find the task by the task id in the params
+      @task = Task.find(params[:id])
     end
 
     # anything below not accessible to users

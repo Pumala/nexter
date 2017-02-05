@@ -1,5 +1,16 @@
 <h2>New Task</h2>
 
+<!-- if any errors -->
+<% if @task.errors.any? %>
+<h4>Oops, something went wrong:</h4>
+  <ul>
+    <!-- for each message, display the message -->
+    <% @task.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <!--  using simple form gem -->
 <!-- @task is an instance variable -->
 <!-- inside tasks_controller, define @task -->

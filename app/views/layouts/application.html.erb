@@ -11,6 +11,9 @@
     <body>
     <!-- if we want to show the element to the user, include the equal sign. if we do not want to show it, exclude it so it looks like this: <% %> instead -->
     <%= render 'layouts/navbar' %>
+    <% flash.each do |name, msg| %>
+      <%= msg %>
+    <% end %>
     <div class="container">
         <%= yield %>
     </div>
